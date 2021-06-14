@@ -1,0 +1,17 @@
+@import "./components/common-styles/common-styles.scss";
+
+.app {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: $secondary;
+		color: $text;
+	}
+	&__settings {
+		display: flex;
+		margin-bottom: 32px;
+	}
+}

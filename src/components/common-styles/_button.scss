@@ -1,0 +1,19 @@
+@import "./vars";
+
+.btn {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	border: none;
+	box-shadow: 0 0 4px $primary;
+	border-radius: 4px;
+	color: $text;
+
+	& + & {
+		margin-left: 12px;
+	}
+
+	&[disabled] {
+		cursor: default;
+	}
+}
