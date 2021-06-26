@@ -2,6 +2,7 @@ import React from 'react'
 import './App.scss'
 import Settings from './components/settings/settings';
 import CurrentTimer from './components/current-timer/current-timer';
+import sound from './sound.wav';
 
 
 class App extends React.Component {
@@ -13,7 +14,8 @@ class App extends React.Component {
       timeLabel: 'Session',
       timer: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
       timerFunction: null,
-      isRunning: false
+      isRunning: false,
+      soundFile: new Audio(sound)
     };
 
     this.incrementBreakTime = this.incrementBreakTime.bind(this);
@@ -70,8 +72,21 @@ class App extends React.Component {
   }
 
   playSound(timer) {
+    const { soundFile } = this.state;
+    soundFile.type = 'audio/wav';
+
     if (timer === 0) {
-      this.sound.play();
+      var playPromise = soundFile.play();
+      console.log(playPromise);
+      playPromise.data = soundFile;
+
+      if (playPromise !== undefined) {
+        playPromise.then(function () {
+          console.log("Playing");
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }
     }
   }
 
@@ -166,7 +181,7 @@ class App extends React.Component {
             start={this.startSession}
             timeLabel={this.state.timeLabel}
           />
-          <audio id="beep" preload="auto" ref={(audio) => { this.sound = audio; }} src="http://www.dartmouth.edu/~milton/reading_room/graphics/nightingale.wav"
+          <audio id="beep" preload="auto" ref={(audio) => { this.sound = audio; }} src="soundFile"
           />
         </div>
       </div>
