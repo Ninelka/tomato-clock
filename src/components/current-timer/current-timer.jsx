@@ -11,25 +11,23 @@ const convertTime = (timer) => {
     return `${minute}:${second}`;
 }
 
-class CurrentTimer extends React.Component {
-    render() {
-        return (
-            <div className={this.props.status ? 'current-timer is-running' : 'current-timer'}>
-                <div className='current-timer__container'>
-                    <span>{this.props.timeLabel}</span>
-                    <h1 id="time-left" className="current-timer__value">{convertTime(this.props.currentTime)}</h1>
-                    <div>
-                        <button className="btn" onClick={this.props.start}>
-                            <i className={this.props.status ? 'fas fa-pause' : 'fas fa-play'}></i>
-                        </button>
-                        <button className="btn" onClick={this.props.reset}>
-                            <i className="fas fa-sync-alt"></i>
-                        </button>
-                    </div>
+function CurrentTimer(props) {
+    return (
+        <div className={props.status ? 'current-timer is-running' : 'current-timer'}>
+            <div className='current-timer__container'>
+                <span>{props.timeLabel}</span>
+                <h1 id="time-left" className="current-timer__value">{convertTime(props.currentTime)}</h1>
+                <div>
+                    <button className="btn" onClick={props.start}>
+                        <i className={props.status ? 'fas fa-pause' : 'fas fa-play'}></i>
+                    </button>
+                    <button className="btn" onClick={props.reset}>
+                        <i className="fas fa-sync-alt"></i>
+                    </button>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default CurrentTimer
