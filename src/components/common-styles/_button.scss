@@ -1,13 +1,13 @@
-@import "./vars";
+@use "./common-styles";
 
 .btn {
 	width: 32px;
 	height: 32px;
 	cursor: pointer;
 	border: none;
-	box-shadow: 0 0 4px $primary;
+	box-shadow: 0 0 4px common-styles.$primary;
 	border-radius: 4px;
-	color: $text;
+	color: common-styles.$text;
 
 	& + & {
 		margin-left: 12px;

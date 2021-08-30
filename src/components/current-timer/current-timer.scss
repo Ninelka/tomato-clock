@@ -1,4 +1,4 @@
-@import "../common-styles/common-styles.scss";
+@use "../common-styles/";
 
 .current-timer {
 	&__container {
@@ -21,7 +21,7 @@
 			width: 100%;
 			height: 100%;
 			border-radius: 50%;
-			box-shadow: 0 0 8px $primary;
+			box-shadow: 0 0 8px common-styles.$primary;
 		}
 	}
 
