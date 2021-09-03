@@ -1,4 +1,4 @@
-@use "../common-styles/";
+@use "../common-styles/common-styles.scss" as common-styles;
 
 .current-timer {
 	&__container {
