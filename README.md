@@ -6,4 +6,4 @@
 ![Vite](https://img.shields.io/badge/-Vite-05122A?style=flat&logo=vite)&nbsp;
 
 
-Migrate my freecodecamp sertification project from [codepen.io](https://codepen.io/Ninelka/full/JjborbZ) to GitHub and trying Vite as a build tool
+Migrate my freecodecamp certification project from [codepen.io](https://codepen.io/Ninelka/full/JjborbZ) to GitHub and trying Vite as a build tool
